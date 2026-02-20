@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPS SMA IT Nur Hidayah</title>
+    <!-- Link Font (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        :root {
+            --primary-red: #b91c1c; /* Merahtua yang elegan */
+            --light-red: #ef4444;
+            --dark-grey: #1f2937;
+            --light-grey: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-grey);
+            background-color: var(--light-grey);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(31, 41, 55, 0.8), rgba(185, 28, 28, 0.8)), url('https://source.unsplash.com/1600x900/?meeting,student');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 2rem;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--light-red);
+        }
+
+        /* --- VISI MISI SECTION --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: var(--primary-red);
+        }
+
+        .visi-misi-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-red);
+        }
+
+        .card h3 {
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .misi-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .misi-number {
+            background: var(--dark-grey);
+            color: var(--white);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* --- STRUKTUR ORGANISASI --- */
+        .struktur-section {
+            background-color: var(--white);
+        }
+
+        .struktur-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .struct-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .struct-card h4 {
+            color: var(--primary-red);
+            font-size: 1.2rem;
+        }
+
+        .struct-card p {
+            color: var(--dark-grey);
+            font-weight: 600;
+        }
+
+        /* --- PROGRAM KERJA --- */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-img {
+            height: 200px;
+            background-color: var(--dark-grey);
+            /* Ganti dengan tag img asli nanti */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .program-content {
+            padding: 1.5rem;
+        }
+
+        .program-tag {
+            background: var(--light-grey);
+            color: var(--dark-grey);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .program-content h4 {
+            margin: 1rem 0 0.5rem;
+            color: var(--primary-red);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content p {
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .visi-misi-wrapper { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGASI -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span style="color:var(--dark-grey)">MPS</span> SMA IT Nur Hidayah
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#visimisi">Visi Misi</a></li>
+                <li><a href="#struktur">Struktur</a></li>
+                <li><a href="#program">Program Kerja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div>
+            <h1>Majelis Permusyawaratan Siswa</h1>
+            <p>Menjaga aspirasi, pertengahan, dan persaudaraan berbasis Al-Quran dan As-Sunnah.</p>
+            <a href="#visimisi" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <!-- VISI MISI -->
+    <section class="container" id="visi-misi">
+        <h2 class="section-title">Tentang Kami</h2>
+        <div class="visi-misi-wrapper">
+            <!-- Visi -->
+            <div class="card">
+                <h3>Visi</h3>
+                <p>Terwujudnya MPS SMA IT Nur Hidayah sebagai lembaga legislatif yang berlandaskan Alquran dan As-Sunnah dalam memperjuangkan aspirasi siswa-siswinya.</p>
+            </div>
+            <!-- Misi -->
+            <div class="card">
+                <h3>Misi</h3>
+                <ul class="misi-list">
+                    <li>
+                        <span class="misi-number">1</span>
+                        Memperjuangkan aspirasi murid SMA IT Nur Hidayah.
+                    </li>
+                    <li>
+                        <span class="misi-number">2</span>
+                        Menyeimbangkan sistem tata tertib di SMA IT Nur Hidayah.
+                    </li>
+                    <li>
+                        <span class="misi-number">3</span>
+                        Meningkatkan kualitas kerja sama dengan Pengurus OSIS demi suksesnya program kerja.
+                    </li>
+                    <li>
+                        <span class="misi-number">4</span>
+                        Menyelenggarakan pemilihan Ketua & Wakil Ketua OSIS secara umum dan langsung.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRUKTUR ORGANISASI -->
+    <section class="struktur-section" id="struktur">
+        <div class="container">
+            <h2 class="section-title">Struktur Organisasi</h2>
+            <div class="struktur-grid">
+                <!-- Contoh Anggota 1 -->
+                <div class="struct-card">
+                    <!-- Ganti src dengan foto asli -->
+                    <img src="https://via.placeholder.com/150" alt="Foto Ketua">
+                    <h4>Nama Siswa</h4>
+                    <p>Ketua MPS</p>
+                </div>
+                <!-- Contoh Anggota 2 -->
+                <div class="struct-card">
+                    <img src="https://via.placeholder.com/150" alt="Foto Waket">
+                    <h4>Nama Siswa</h4>
+                    <p>Wakil Ketua</p>
+                </div>
+                <!-- Contoh Anggota 3 -->
+                <div class="struct-card">
+                    <img src="https://via.placeholder.com/150" alt="Foto Sekjen">
+                    <h4>Nama Siswa</h4>
+                    <p>Sekretaris</p>
+                </div>
+                <!-- Contoh Anggota 4 -->
+                <div class="struct-card">
+                    <img src="https://via.placeholder.com/150" alt="Foto Bendahara">
+                    <h4>Nama Siswa</h4>
+                    <p>Bendahara</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM KERJA -->
+    <section class="container" id="program">
+        <h2 class="section-title">Program Kerja</h2>
+        <div class="program-grid">
+            <!-- Program 1 -->
+            <div class="program-card">
+                <div class="program-img" style="background-color: #991b1b;">
+                    <span>📢</span>
+                </div>
+                <div class="program-content">
+                    <span class="program-tag">Aspir
