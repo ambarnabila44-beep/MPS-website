@@ -279,6 +279,42 @@
             .visi-misi-wrapper { grid-template-columns: 1fr; }
             .navbar { flex-direction: column; gap: 1rem; }
         }
+      /* HERO UPGRADE */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #991b1b, #dc2626);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: white;
+  color: #991b1b;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -300,12 +336,15 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
-        <div>
-            <h1>Majelis Permusyawaratan Siswa</h1>
-            <p>Menjaga aspirasi, pertengahan, dan persaudaraan berbasis Al-Quran dan As-Sunnah.</p>
-            <a href="#visimisi" class="btn">Pelajari Lebih Lanjut</a>
-        </div>
-    </section>
+  <div class="hero-content">
+    <h1>Majelis Permusyawaratan Siswa</h1>
+    <p>SMA IT Nur Hidayah</p>
+
+    <a href="#visimisi" class="hero-btn">
+      Jelajahi Lebih Lanjut
+    </a>
+  </div>
+</section>
 
     <!-- VISI MISI -->
     <section class="container" id="visi-misi">
